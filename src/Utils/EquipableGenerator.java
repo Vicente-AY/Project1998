@@ -5,7 +5,7 @@ import Items.Slot;
 
 import java.util.Random;
 
-public class Generator {
+public class EquipableGenerator {
     Random rand = new Random();
     public Equipable randomEquipable(){
         int index = rand.nextInt(5);

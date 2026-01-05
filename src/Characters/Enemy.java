@@ -1,13 +1,7 @@
 package Characters;
-import Items.Equipable;
-import Items.Item;
-import Items.Slot;
-import java.util.ArrayList;
-import java.util.HashMap;
 
-public class Player extends Character {
-
-    public Player(String name, int health, int reflex, int maxHealth, int baseStat){
+public class Enemy extends Character{
+    public Enemy(String name, int health, int reflex, int maxHealth, int baseStat){
         super(name, health, reflex, maxHealth, baseStat);
 
     }
@@ -36,9 +30,4 @@ public class Player extends Character {
     public void defense(){
         System.out.println("defense");
     }
-    public void retreat(){
-        System.out.println("retreat");
-    }
-
-
 }

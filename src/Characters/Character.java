@@ -9,15 +9,17 @@ public abstract class Character {
     int reflex;
     int maxHealth;
     int baseStat;
+    boolean alive = true;
     ArrayList<Item> inventory = new ArrayList<Item>();
     HashMap<Slot, Equipable> equipment = new HashMap<Slot, Equipable>();
 
-    public Character(String name, int health, int reflex, int maxHealth, int baseStat){
+    public Character(String name, int health, int reflex, int maxHealth, int baseStat, boolean alive) {
         this.name = name;
         this.health = health;
         this.reflex = reflex;
         this.maxHealth = maxHealth;
         this.baseStat = baseStat;
+        this.alive = alive;
         this.inventory = new ArrayList<Item>();
         this.equipment = new HashMap<Slot, Equipable>();
     }
@@ -43,6 +45,9 @@ public abstract class Character {
     public HashMap<Slot, Equipable> getEquipment(){
         return equipment;
     }
+    public boolean getAlive(){
+        return alive;
+    }
     public void setName(String name) {
         this.name = name;
     }
@@ -64,9 +69,17 @@ public abstract class Character {
     public void setEquipment(HashMap<Slot, Equipable> equipment) {
         this.equipment = equipment;
     }
+    public void setAlive(boolean alive){
+        this.alive = alive;
+    }
+
 
     public void equipItem(Equipable equipable){
         this.equipment.put(equipable.getSlot(), equipable);
     }
+    public void die(){
+        this.alive = false;
+    }
+
 
 }

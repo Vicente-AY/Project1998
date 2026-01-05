@@ -12,19 +12,19 @@ public class EnemyGenerator {
         Enemy enemy;
         switch(random){
             case 0:
-                enemy = new Enemy("Rata Gigante", 30, 5, 30, 3);
+                enemy = new Enemy("Rata Gigante", 30, 5, 30, 3, true);
                 break;
             case 1:
-                enemy = new Enemy("Bandido", 60, 10, 60, 5);
+                enemy = new Enemy("Bandido", 60, 10, 60, 5, true);
                 break;
             case 2:
-                enemy = new Enemy("Esqueleto", 80, 8, 80, 3);
+                enemy = new Enemy("Esqueleto", 80, 8, 80, 3, true);
                 break;
             case 3:
-                enemy = new Enemy("Orco", 120, 6, 120, 10);
+                enemy = new Enemy("Orco", 120, 6, 120, 10, true);
                 break;
             case 4:
-                enemy = new Enemy("Dragón Joven", 250, 15, 250, 25);
+                enemy = new Enemy("Dragón Joven", 250, 15, 250, 25, true);
                 break;
             default:
                 return null;

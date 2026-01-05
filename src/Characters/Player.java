@@ -7,8 +7,8 @@ import java.util.HashMap;
 
 public class Player extends Character {
 
-    public Player(String name, int health, int reflex, int maxHealth, int baseStat){
-        super(name, health, reflex, maxHealth, baseStat);
+    public Player(String name, int health, int reflex, int maxHealth, int baseStat, boolean alive){
+        super(name, health, reflex, maxHealth, baseStat, alive);
 
     }
     public String getName(){

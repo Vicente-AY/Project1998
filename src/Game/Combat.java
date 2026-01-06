@@ -7,10 +7,12 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Combat {
+    PlayerTurn pTurn = new PlayerTurn();
     EnemyGenerator gen = new EnemyGenerator();
     Enemy currentEnemy ;
     Random rand = new Random();
     Scanner sc = new Scanner(System.in);
+    int turn = 0;
 
 
 
@@ -19,59 +21,33 @@ public class Combat {
         currentEnemy = gen.generateEnemy();
 
         while(contestant.getAlive() == true && currentEnemy.getAlive() == true){
+            contestant.setDefending(false);
+            if(turn > 0){
+                System.out.println("Turn: " + turn);
+            }
+            System.out.println("Player: " + contestant.getName() + " " + contestant.getHealth() + "/" + contestant.getMaxHealth() + " HP");
             System.out.println("Current enemy: " + currentEnemy.getName() + " " + currentEnemy.getHealth() + "/" + currentEnemy.getMaxHealth() + " HP");
             System.out.println("Choose your action");
             System.out.println("1. Attack | 2. Defend | 3. Use Consumable | 4. Run Away");
-            String action = sc.nextLine();
+            int action = sc.nextInt();
             switch (action){
-                case "1":
-                    PlayerAttack(contestant, currentEnemy);
+                case 1:
+                    pTurn.playerAttack(contestant, currentEnemy);
                     if(currentEnemy.getAlive() == false){
                         System.out.println("YOU WIN THE BATTLE!");
                         return;
                     }
+                    turn++;
+                    break;
+                case 2:
+                    pTurn.playerDefend(contestant);
+                    turn++;
+                    break;
+                case 3:
+                    pTurn.playerConsumableUse(contestant, currentEnemy);
+                    turn++;
                     break;
             }
-        }
-    }
-
-    public void PlayerAttack(Player contestant, Enemy currentEnemy){
-        int attack;
-        int enemyDefence;
-        int enemyHealth = currentEnemy.getHealth();
-        Equipable playerWeapon = contestant.getEquipment().get(Slot.Weapon);
-        int playerDice = rand.nextInt(6) + 1;
-        int enemyDice = rand.nextInt(6) + 1;
-        if(playerWeapon != null) {
-            attack = contestant.getBaseStat() + playerWeapon.getStat() + playerDice;
-        }
-        else{
-            attack = contestant.getBaseStat() + playerDice;
-        }
-        enemyDefence = currentEnemy.getBaseStat() + enemyDice;
-        for(Equipable piece : currentEnemy.getEquipment().values()){
-            if(piece != null){
-                enemyDefence += piece.getStat();
-            }
-        }
-        if(attack > enemyDefence){
-            System.out.println("CRITICAL HIT. You made: " + attack + " Damage");
-            enemyHealth -= attack;
-        }
-        else if(attack == enemyDefence){
-            System.out.println("HIT! You made: " + attack/2 + " Damage");
-            enemyHealth -= attack/2;
-        }
-        else{
-            System.out.println("BLOCKED! You made no damage!");
-            return;
-        }
-        if(enemyHealth < 0){
-            enemyHealth = 0;
-            currentEnemy.die();
-        }
-        else {
-            currentEnemy.setHealth(enemyHealth);
         }
     }
 }

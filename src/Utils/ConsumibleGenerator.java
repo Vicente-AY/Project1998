@@ -9,17 +9,17 @@ public class ConsumibleGenerator {
         int random = rand.nextInt(6);
         switch(random){
             case 0:
-                return new Consumible("Poción de Vida", "Restaura salud al instante", 1, 50);
+                return new Consumible("Poción de Vida", "Restaura salud al instante", 1, 50, Type.Heal);
             case 1:
-                return new Consumible("Poción de Energía", "Recupera energía o maná", 1, 40);
+                return new Consumible("Poción de Energía", "Recupera energía o maná", 1, 40, Type.Heal);
             case 2:
-                return new Consumible("Pergamino de Escape", "Permite huir del combate", 1, 100);
+                return new Consumible("Pergamino de Regeneración", "Recupera mucha salud", 1, 100, Type.Heal);
             case 3:
-                return new Consumible("Bomba Pequeña", "Explota y daña a los enemigos", 1, 30);
+                return new Consumible("Bomba Pequeña", "Explota y daña a los enemigos", 1, 30, Type.Damage);
             case 4:
-                return new Consumible("Bomba de Fuego", "Causa daño de fuego en área", 1, 60);
+                return new Consumible("Bomba de Fuego", "Causa daño de fuego en área", 1, 60, Type.Damage);
             case 5:
-                return new Consumible("Veneno Concentrado", "Inflige daño prolongado", 1, 45);
+                return new Consumible("Veneno Concentrado", "Inflige daño prolongado", 1, 45, Type.Damage);
             default:
                 return null;
         }

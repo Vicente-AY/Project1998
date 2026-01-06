@@ -10,6 +10,7 @@ public abstract class Character {
     int maxHealth;
     int baseStat;
     boolean alive = true;
+    boolean isDefending = false;
     ArrayList<Item> inventory = new ArrayList<Item>();
     HashMap<Slot, Equipable> equipment = new HashMap<Slot, Equipable>();
 
@@ -80,6 +81,13 @@ public abstract class Character {
     public void die(){
         this.alive = false;
     }
+    public void setDefending(boolean defending){
+        this.isDefending = defending;
+    }
+    public boolean isDefending(){
+        return this.isDefending;
+    }
+
 
 
 }

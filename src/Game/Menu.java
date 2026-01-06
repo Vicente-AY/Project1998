@@ -11,26 +11,26 @@ public class Menu {
 
     public void gameMenu(){
         while(true){
-        System.out.println("Welcome to the Game Menu");
-        System.out.println("Choose your action");
-        System.out.println("1. New Game");
-        System.out.println("2. New Player");
-        System.out.println("3. Exit");
-        int choice = sc.nextInt();
-        switch (choice) {
-            case 1:
+            System.out.println("Welcome to the Game Menu");
+            System.out.println("Choose your action");
+            System.out.println("1. New Game");
+            System.out.println("2. New Player");
+            System.out.println("3. Exit");
+            int choice = sc.nextInt();
+            switch (choice) {
+                case 1:
 
-                waitInst.waitStage(newPlayer);
-                break;
-            case 2:
-                newPlayer = newPlayerInst.playerCreation();
-                break;
-            case 3:
-                return;
-            default:
-                System.out.println("Wrong choice");
-                break;
-        }
+                    waitInst.waitStage(newPlayer);
+                    break;
+                case 2:
+                    newPlayer = newPlayerInst.playerCreation();
+                    break;
+                case 3:
+                    return;
+                default:
+                    System.out.println("Wrong choice");
+                    break;
+            }
         }
     }
 }

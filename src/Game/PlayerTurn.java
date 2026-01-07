@@ -20,8 +20,10 @@ public class PlayerTurn {
         int enemyDice = rand.nextInt(6) + 1;
         if (playerWeapon != null) {
             attack = contestant.getBaseStat() + playerWeapon.getStat() + playerDice;
+            System.out.println(contestant.getName() + " attacks with  " + playerWeapon.getName());
         }
         else {
+            System.out.println(contestant.getName() + " punch " + currentEnemy.getName());
             attack = contestant.getBaseStat() + playerDice;
         }
         enemyDefence = currentEnemy.getBaseStat() + enemyDice;
@@ -38,14 +40,14 @@ public class PlayerTurn {
             enemyDefence *= 1.5;
         }
         if (attack > enemyDefence) {
-            System.out.println("CRITICAL HIT. You made: " + attack + " Damage");
+            System.out.println("CRITICAL HIT1 " + contestant.getName() + " made " + attack + " damage");
             enemyHealth -= attack;
         } else if (attack == enemyDefence) {
-            System.out.println("HIT! You made: " + attack / 2 + " Damage");
+            System.out.println("HIT! " + contestant.getName() +  " made: " + attack / 2 + " damage");
             enemyHealth -= attack / 2;
         }
         else {
-            System.out.println("BLOCKED! You made no damage!");
+            System.out.println("BLOCKED! " + contestant.getName() + " made no damage");
             return;
         }
         if (enemyHealth <= 0) {
@@ -106,7 +108,7 @@ public class PlayerTurn {
                     currentHealth = contestant.getMaxHealth();
                 }
                 contestant.setHealth(currentHealth);
-                System.out.println("You healed " + selectedConsumible.getPower());
+                System.out.println("You healed " + selectedConsumible.getPower() + " using " + selectedConsumible.getName());
                 break;
             case Type.Damage:
                 int enemyHealth = currentEnemy.getHealth();
@@ -118,7 +120,7 @@ public class PlayerTurn {
                 else {
                     currentEnemy.setHealth(enemyHealth);
                 }
-                System.out.println("You dealt " + selectedConsumible.getPower() + " Damage with your " + selectedConsumible.getName());
+                System.out.println("You dealt " + selectedConsumible.getPower() + " damage throwing your " + selectedConsumible.getName());
                 break;
         }
         selectedConsumible.setDurability(selectedConsumible.getDurability() - 1);

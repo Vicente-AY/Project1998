@@ -14,18 +14,15 @@ public class Menu {
             System.out.println("Welcome to the Game Menu");
             System.out.println("Choose your action");
             System.out.println("1. New Game");
-            System.out.println("2. New Player");
-            System.out.println("3. Exit");
+            System.out.println("2. Exit");
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
-
+                    newPlayer = newPlayerInst.playerCreation();
                     waitInst.waitStage(newPlayer);
                     break;
                 case 2:
-                    newPlayer = newPlayerInst.playerCreation();
-                    break;
-                case 3:
+                    System.out.println("Thanks for playing!");
                     return;
                 default:
                     System.out.println("Wrong choice");

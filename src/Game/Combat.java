@@ -28,12 +28,14 @@ public class Combat {
             boolean turnFinished = false;
             while(!turnFinished) {
                 if (turn > 0) {
+                    System.out.println("- - - - - - - - - - - - -");
                     System.out.println("Turn: " + turn);
                 }
                 System.out.println("Player: " + contestant.getName() + " " + contestant.getHealth() + "/" + contestant.getMaxHealth() + " HP");
                 System.out.println("Current enemy: " + currentEnemy.getName() + " " + currentEnemy.getHealth() + "/" + currentEnemy.getMaxHealth() + " HP");
                 System.out.println("Choose your action");
                 System.out.println("1. Attack | 2. Defend | 3. Use Consumable | 4. Run Away");
+                System.out.println("- - - - Your Turn - - - -");
                 int action = sc.nextInt();
                 sc.nextLine();
                 switch (action) {

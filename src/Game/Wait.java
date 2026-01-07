@@ -12,7 +12,6 @@ public class Wait {
 
         while(true){
             Combat combat = new Combat();
-            System.out.println("Combat Finished");
             System.out.println("What do you want to do?");
             System.out.println("1. Next Combat");
             System.out.println("2. Use Consumable");
@@ -28,7 +27,10 @@ public class Wait {
                 System.out.println("Not implemented yet");
                 break;
             case 3:
-                System.out.println("You made: " + iterations + " iterations");
+                if(iterations > 0) {
+                    System.out.println("You made: " + iterations + " iterations");
+                }
+                System.out.println("Closing the game");
                 return;
             default:
                 System.out.println("Not valid choice");

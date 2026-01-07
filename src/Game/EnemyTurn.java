@@ -9,6 +9,7 @@ public class EnemyTurn {
     Random rand = new Random();
 
     public void enemyChoice(Player contestant, Enemy currentEnemy){
+        System.out.println("- - - - Enemy Turn - - - -");
         ArrayList<Consumible> healingItems = new ArrayList<Consumible>();
         ArrayList<Consumible> throwableItems = new ArrayList<Consumible>();
         Random rand = new Random();
@@ -43,7 +44,7 @@ public class EnemyTurn {
             currentEnemyHealth = currentEnemy.getMaxHealth();
         }
         currentEnemy.setHealth(currentEnemyHealth);
-        System.out.println(currentEnemy.getName() + " Has healed: " + selectedHealingConsumible.getPower());
+        System.out.println(currentEnemy.getName() + " Has healed: " + selectedHealingConsumible.getPower() + " HP with " + selectedHealingConsumible.getName());
         selectedHealingConsumible.setDurability(selectedHealingConsumible.getDurability() - 1);
         if(selectedHealingConsumible.getDurability() <= 0){
             currentEnemy.getInventory().remove(selectedHealingConsumible);
@@ -54,7 +55,7 @@ public class EnemyTurn {
         Consumible selectedTrhowConsumible = throwableItems.get(0);
         int currentContestantHealth = contestant.getHealth();
         currentContestantHealth -= selectedTrhowConsumible.getPower();
-        System.out.println(currentEnemy.getName() + " Has trhowed: " + selectedTrhowConsumible.getName() + " and dealt: " + selectedTrhowConsumible.getPower() + " damage");
+        System.out.println(currentEnemy.getName() + " Has trhowed: " + selectedTrhowConsumible.getName() + " and dealt: " + selectedTrhowConsumible.getPower() + " damage to " + contestant.getName());
         if(currentContestantHealth <= 0){
             currentContestantHealth = 0;
             contestant.die();
@@ -78,9 +79,11 @@ public class EnemyTurn {
         int playerDice = rand.nextInt(6) +1;
         int enemyDice = rand.nextInt(6) +1;
         if(enemyWeapon != null){
+            System.out.println(currentEnemy.getName() + " attacks with  " + enemyWeapon.getName());
             attack = currentEnemy.getBaseStat() + enemyWeapon.getStat() + enemyDice;
         }
         else{
+            System.out.println(currentEnemy.getName() + " punch " + contestant.getName());
             attack = currentEnemy.getBaseStat() + enemyDice;
         }
         playerDefence = contestant.getBaseStat() + playerDice;
@@ -94,15 +97,15 @@ public class EnemyTurn {
             playerDefence *= 1.5;
         }
         if(attack > playerDefence){
-            System.out.println("CRITIAL HIT! Enemy made: " + attack + " damage");
+            System.out.println("CRITIAL HIT! " +  currentEnemy.getName() + " made " + attack + " damage");
             playerHealth -= attack;
         }
         else if(attack == playerDefence){
-            System.out.println("HIT! Enemy dealt: " + attack/2 + " damage");
+            System.out.println("HIT! " +  currentEnemy.getName() + " made " + attack/2 + " damage");
             playerHealth -= attack/2;
         }
         else{
-            System.out.println("You blocked the enemy attack");
+            System.out.println("Blocked! " + currentEnemy + " made no damage");
             return;
         }
         if(playerHealth <= 0){

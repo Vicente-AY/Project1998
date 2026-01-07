@@ -1,7 +1,6 @@
 package Game;
 import Characters.*;
 import Items.*;
-
 import java.util.Scanner;
 
 public class NewPlayer {

@@ -9,7 +9,6 @@ public class Player extends Character {
 
     public Player(String name, int health, int reflex, int maxHealth, int baseStat, boolean alive){
         super(name, health, reflex, maxHealth, baseStat, alive);
-
     }
     public String getName(){
         return name;
@@ -39,6 +38,4 @@ public class Player extends Character {
     public void retreat(){
         System.out.println("retreat");
     }
-
-
 }

@@ -2,7 +2,6 @@ package Game;
 import Utils.*;
 import Characters.*;
 import Items.*;
-
 import java.util.Random;
 import java.util.Scanner;
 
@@ -14,15 +13,11 @@ public class Combat {
     Scanner sc = new Scanner(System.in);
     int turn = 0;
 
-
-
-
     public void combatStage(Player contestant){
         //currentEnemy = gen.generateEnemy();
         Enemy currentEnemy = new Enemy("Rata Apestosa", 25, 10, 100, 1, true);
         currentEnemy.getInventory().add(new Consumible("Poción de Vida", "Restaura salud al instante", 1, 50, Type.Heal));
         currentEnemy.getInventory().add(new Consumible("Bomba de Fuego", "Causa daño de fuego en área", 1, 60, Type.Damage));
-
         while(contestant.getAlive() == true && currentEnemy.getAlive() == true){
             contestant.setDefending(false);
             boolean turnFinished = false;
@@ -74,7 +69,6 @@ public class Combat {
                             turn++;
                             break;
                         }
-
                 }
             }
             EnemyTurn eTurn = new EnemyTurn();

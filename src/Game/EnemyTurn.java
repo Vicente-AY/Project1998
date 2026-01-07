@@ -1,7 +1,6 @@
 package Game;
 import Characters.*;
 import Items.*;
-
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -69,8 +68,6 @@ public class EnemyTurn {
         }
     }
 
-
-
     public void enemyAttack(Player contestant, Enemy currentEnemy){
         int attack;
         int playerDefence;
@@ -115,6 +112,5 @@ public class EnemyTurn {
         else{
             contestant.setHealth(playerHealth);
         }
-
     }
 }

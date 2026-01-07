@@ -8,8 +8,6 @@ public class Wait {
     int iterations = 0;
 
     public void waitStage(Player contestant){
-
-
         while(true){
             Combat combat = new Combat();
             System.out.println("What do you want to do?");
@@ -38,6 +36,4 @@ public class Wait {
             }
         }
     }
-
-
 }

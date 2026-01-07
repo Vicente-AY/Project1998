@@ -74,7 +74,6 @@ public abstract class Character {
         this.alive = alive;
     }
 
-
     public void equipItem(Equipable equipable){
         this.equipment.put(equipable.getSlot(), equipable);
     }
@@ -87,7 +86,4 @@ public abstract class Character {
     public boolean isDefending(){
         return this.isDefending;
     }
-
-
-
 }

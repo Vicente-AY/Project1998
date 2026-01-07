@@ -1,7 +1,6 @@
 package Game;
 import Characters.*;
 import Items.*;
-
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -9,7 +8,6 @@ import java.util.Scanner;
 public class PlayerTurn {
     Random rand = new Random();
     Scanner scan = new Scanner(System.in);
-
 
     public void playerAttack(Player contestant, Enemy currentEnemy) {
         int attack;
@@ -144,6 +142,3 @@ public class PlayerTurn {
         }
     }
 }
-
-
-

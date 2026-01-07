@@ -23,6 +23,5 @@ public class ConsumibleGenerator {
             default:
                 return null;
         }
-
     }
 }

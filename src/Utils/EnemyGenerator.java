@@ -1,5 +1,4 @@
 package Utils;
-
 import java.util.Random;
 import Characters.*;
 import Items.*;

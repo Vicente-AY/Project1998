@@ -10,7 +10,6 @@ public abstract class Item {
         this.description = description;
         this.durability = durability;
     }
-
     public String getName() {
         return name;
     }

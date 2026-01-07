@@ -1,8 +1,6 @@
 package Utils;
-
 import Items.Equipable;
 import Items.Slot;
-
 import java.util.Random;
 
 public class EquipableGenerator {
@@ -22,9 +20,9 @@ public class EquipableGenerator {
                 return randomWeapon();
             default:
                 return null;
-
         }
     }
+
     public Equipable randomHead(){
         int index = rand.nextInt(5);
         switch(index){
@@ -42,6 +40,7 @@ public class EquipableGenerator {
                 return null;
         }
     }
+
     public Equipable randomChest(){
         int index = rand.nextInt(5);
         switch(index){
@@ -59,6 +58,7 @@ public class EquipableGenerator {
                 return null;
         }
     }
+
     public Equipable randomLeg(){
         int index = rand.nextInt(5);
         switch(index){
@@ -76,6 +76,7 @@ public class EquipableGenerator {
                 return null;
         }
     }
+
     public Equipable randomFoot(){
         int index = rand.nextInt(5);
         switch(index){
@@ -93,6 +94,7 @@ public class EquipableGenerator {
                 return null;
         }
     }
+
     public Equipable randomWeapon(){
         int index = rand.nextInt(5);
         switch(index){
@@ -110,7 +112,4 @@ public class EquipableGenerator {
                 return null;
         }
     }
-
-
-
 }

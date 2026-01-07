@@ -9,7 +9,6 @@ public class Equipable extends Item {
         this.stat = stat;
         this.slot = slot;
     }
-
     public Slot getSlot(){
         return slot;
     }

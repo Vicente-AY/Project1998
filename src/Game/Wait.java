@@ -10,6 +10,7 @@ public class Wait {
     public void waitStage(Player contestant){
         while(true){
             Combat combat = new Combat();
+            System.out.println(contestant.getName() + " " + contestant.getHealth() + "/" + contestant.getMaxHealth() + " HP");
             System.out.println("What do you want to do?");
             System.out.println("1. Next Combat");
             System.out.println("2. Use Consumable");
@@ -18,8 +19,14 @@ public class Wait {
         switch(choice) {
             case 1:
                 combat.combatStage(contestant);
-                iterations++;
-                break;
+                if(contestant.getAlive() == true){
+                    iterations++;
+                    break;
+                }
+                else{
+                    System.out.println("Skill issue");
+                    return;
+                }
             case 2:
                 //playerTurn.playerConsumableUse(contestant);
                 System.out.println("Not implemented yet");

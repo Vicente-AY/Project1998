@@ -38,7 +38,7 @@ public class PlayerTurn {
             enemyDefence *= 1.5;
         }
         if (attack > enemyDefence) {
-            System.out.println("CRITICAL HIT1 " + contestant.getName() + " made " + attack + " damage");
+            System.out.println("CRITICAL HIT! " + contestant.getName() + " made " + attack + " damage");
             enemyHealth -= attack;
         } else if (attack == enemyDefence) {
             System.out.println("HIT! " + contestant.getName() +  " made: " + attack / 2 + " damage");

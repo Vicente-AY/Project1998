@@ -102,7 +102,7 @@ public class EnemyTurn {
             playerHealth -= attack/2;
         }
         else{
-            System.out.println("Blocked! " + currentEnemy + " made no damage");
+            System.out.println("Blocked! " + currentEnemy.getName() + " made no damage");
             return;
         }
         if(playerHealth <= 0){

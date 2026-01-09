@@ -29,13 +29,4 @@ public class Player extends Character {
         this.reflex = reflex;
     }
 
-    public void attack(){
-        System.out.println("attack");
-    }
-    public void defense(){
-        System.out.println("defense");
-    }
-    public void retreat(){
-        System.out.println("retreat");
-    }
 }

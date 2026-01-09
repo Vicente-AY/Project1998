@@ -23,10 +23,4 @@ public class Enemy extends Character{
         this.reflex = reflex;
     }
 
-    public void attack(){
-        System.out.println("attack");
-    }
-    public void defense(){
-        System.out.println("defense");
-    }
 }
